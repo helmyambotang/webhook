@@ -3,6 +3,7 @@ package com.mastercard.dis.mids.webhooks.controller;
 import java.util.Collections;
 import java.util.Map;
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,6 +22,11 @@ public class FinicityConnectWebhookController {
 	public Map<String, String> getConnectStatus(@RequestBody String payload, @PathVariable String customerId) {
 		log.info("{}: {}", customerId, payload);
 		return Collections.singletonMap("status", "received");
+	}
+	
+	@GetMapping("/message")
+	public String message() {
+		return "im alive!";
 	}
 
 }
