@@ -1,1 +1,1 @@
-# webhook
+# Sample Webhook for FInicity Connect
