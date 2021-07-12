@@ -16,14 +16,13 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 @RequestMapping("/webhook")
 public class FinicityConnectWebhookController {
-	
-	
+
 	@PostMapping(value = "/status/{customerId}", produces = "application/json")
 	public Map<String, String> getConnectStatus(@RequestBody String payload, @PathVariable String customerId) {
-		log.info("{}: {}", customerId, payload);
+		log.info("{}", payload);
 		return Collections.singletonMap("status", "received");
 	}
-	
+
 	@GetMapping("/message")
 	public String message() {
 		return "im alive!";
